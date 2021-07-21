@@ -82,8 +82,6 @@ print(doodleInstance.curly) # True
 ```
 
 # Django
-make sure u have pipenv on your machine
-
 Setup: 
 ```
 cd project
