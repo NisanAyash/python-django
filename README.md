@@ -1,4 +1,4 @@
-# Python Basics:
+## Python Basics:
 ```.py
 a = 'hello'
 a.upper() # 'HELLO'
@@ -93,18 +93,54 @@ python manage.py runserver __port__  # port is optional paramater
 # update in the settings the interpreter path (ctrl + shift + p then "select interpreter" 
 pipenv --venv # get the path of venv environment 
 
+# Install packages (!required)
 python manage.py startapp playground
+python manage.py startapp store
+python manage.py startapp tags
+python manage.py startapp anyapp
+```
 
-Mapping urls to functions
-# create urls file in playground direction
+## Mapping urls 
+
+```py
+# Mapping urls to functions
+
+## go to views file and create api-end point 
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+def say_hello(req): 
+    return HttpResponse('Hello world!')
+
+
+def say_goodbye(req): 
+    x = 1
+    y = 2
+    return HttpResponse('Goodbye')
+
+
+## create urls file in playground direction
 
 from django.urls import path
 from . import views
 
 # Url config
-
 urlpatterns = [
     path('hello/', views.say_hello),
     path('bye/', views.say_goodbye)
 ]
+
+## go to urls file into ur project and add the playground to urls like the example below
+
+from django.contrib import admin
+from django.urls import path, include
+
+
+# playground/hello
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('playground/', include('playground.urls'))
+]
 ```
+
