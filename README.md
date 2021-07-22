@@ -95,5 +95,16 @@ pipenv --venv # get the path of venv environment
 
 python manage.py startapp playground
 
-# create urls file on playground
+Mapping urls to functions
+# create urls file in playground direction
+
+from django.urls import path
+from . import views
+
+# Url config
+
+urlpatterns = [
+    path('hello/', views.say_hello),
+    path('bye/', views.say_goodbye)
+]
 ```
