@@ -164,4 +164,9 @@ class Customer(models.Model):
     birth_date = models.DateTimeField(null=True)
 ```
 
+```
+# install pydot
+pip install pydot
+pythob manage.py gtaph_models --pytid core -o a.png
+```
 
