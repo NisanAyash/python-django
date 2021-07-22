@@ -82,7 +82,7 @@ print(doodleInstance.curly) # True
 ```
 
 # Django
-Setup: 
+## Setup: 
 ```
 cd project
 pipenv install django
@@ -143,4 +143,25 @@ urlpatterns = [
     path('playground/', include('playground.urls'))
 ]
 ```
+
+## Model
+```py
+## go to models file and add models..
+
+class Product(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    inventory = models.IntegerField()
+    last_update = models.DateTimeField(auto_now=True)
+
+
+class Customer(models.Model):
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
+    phone = models.CharField(max_length=20)
+    birth_date = models.DateTimeField(null=True)
+```
+
 
