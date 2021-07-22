@@ -82,8 +82,6 @@ print(doodleInstance.curly) # True
 ```
 
 # Django
-make sure u have pipenv on your machine
-
 Setup: 
 ```
 cd project
@@ -94,4 +92,8 @@ python manage.py runserver __port__  # port is optional paramater
 
 # update in the settings the interpreter path (ctrl + shift + p then "select interpreter" 
 pipenv --venv # get the path of venv environment 
+
+python manage.py startapp playground
+
+# create urls file on playground
 ```
